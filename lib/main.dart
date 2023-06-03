@@ -1,17 +1,19 @@
+import 'package:carrot_market_ui/screens/main_screen.dart';
+import 'package:carrot_market_ui/theme.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(myapp());
+void main() => runApp(CarrotMarketUI());
 
-class myapp extends StatefulWidget {
-  const myapp({Key? key}) : super(key: key);
+class CarrotMarketUI extends StatelessWidget {
+  const CarrotMarketUI({Key? key}) : super(key: key);
 
-  @override
-  State<myapp> createState() => _myappState();
-}
-
-class _myappState extends State<myapp> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      title: 'carrot_market_ui',
+      debugShowCheckedModeBanner: false,
+      home: MainScreens(),
+      theme: theme(),
+    );
   }
 }
