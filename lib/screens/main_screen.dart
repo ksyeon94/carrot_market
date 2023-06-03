@@ -1,3 +1,8 @@
+import 'package:carrot_market_ui/screens/chatting/chatting_screen.dart';
+import 'package:carrot_market_ui/screens/home/home_screen.dart';
+import 'package:carrot_market_ui/screens/my_carrot/my_carrot_screen.dart';
+import 'package:carrot_market_ui/screens/near_me/near_me.dart';
+import 'package:carrot_market_ui/screens/neighborhood_life/neghborhood_life.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -17,27 +22,33 @@ class _MainScreensState extends State<MainScreens> {
       body: IndexedStack(
         index: _selectedIndex,
         children: [
-          Container(
-            color: Colors.orange[100],
-            child: Center(
-              child: Text('IndexedStack 1',
-                  style: TextStyle(fontSize: 20, color: Colors.black)),
-            ),
-          ),
-          Container(
-            color: Colors.redAccent[100],
-            child: Center(
-              child: Text('IndexedStack 2',
-                  style: TextStyle(fontSize: 20, color: Colors.black)),
-            ),
-          ),
+          HomeScreen(),
+          NeighborhoodLifeScreen(),
+          NearMeScreen(),
+          ChattingScreen(),
+          MyCarrotScreen()
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
+
         items: [
           BottomNavigationBarItem(
             label: '홈',
             icon: Icon(CupertinoIcons.home),
+          ),
+          BottomNavigationBarItem(
+            label: '동네생활',
+            icon: Icon(CupertinoIcons.square_on_square),
+          ),
+          BottomNavigationBarItem(
+            label: '내 근처',
+            icon: Icon(CupertinoIcons.placemark),
+          ),
+          BottomNavigationBarItem(
+            label: '나의 당근',
+            icon: Icon(CupertinoIcons.person),
           ),
           BottomNavigationBarItem(
             label: '채팅',
