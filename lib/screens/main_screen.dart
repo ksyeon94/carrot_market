@@ -38,6 +38,7 @@ class _MainScreensState extends State<MainScreens> {
             label: '홈',
             icon: Icon(CupertinoIcons.home),
           ),
+          
           BottomNavigationBarItem(
             label: '동네생활',
             icon: Icon(CupertinoIcons.square_on_square),
