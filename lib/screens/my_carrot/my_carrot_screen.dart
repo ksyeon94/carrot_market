@@ -1,3 +1,5 @@
+import 'package:carrot_market_ui/models/icon_menu.dart';
+import 'package:carrot_market_ui/screens/my_carrot/components/card_icon_menu.dart';
 import 'package:carrot_market_ui/screens/my_carrot/components/my_carrot_header.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +23,7 @@ class MyCarrotScreen extends StatelessWidget {
             ),
             preferredSize: Size.fromHeight(0.5)),
       ),
-      body: MyCarrotHeader(),backgroundColor: Colors.grey,
+      body: Column(children: [MyCarrotHeader(),CardIconMenu(iconMenuList: iconMenu1)])
     );
   }
 }
