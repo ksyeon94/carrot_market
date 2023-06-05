@@ -10,20 +10,30 @@ class MyCarrotScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('나의당근'),
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.settings))
-        ],
-        bottom: const PreferredSize(
-            child: Divider(
-              thickness: 0.5,
-              height: 0.5,
-              color: Colors.grey,
-            ),
-            preferredSize: Size.fromHeight(0.5)),
-      ),
-      body: Column(children: [MyCarrotHeader(),CardIconMenu(iconMenuList: iconMenu1)])
-    );
+      backgroundColor: Colors.grey[100],
+        appBar: AppBar(
+          title: const Text('나의당근'),
+          actions: [
+            IconButton(onPressed: () {}, icon: const Icon(Icons.settings))
+          ],
+          bottom: const PreferredSize(
+              child: Divider(
+                thickness: 0.5,
+                height: 0.5,
+                color: Colors.grey,
+              ),
+              preferredSize: Size.fromHeight(0.5)),
+        ),
+        body: SingleChildScrollView(
+          child: Column(children: [
+            MyCarrotHeader(),
+            SizedBox(height: 8,),
+            CardIconMenu(iconMenuList: iconMenu1),
+            SizedBox(height: 8,),
+            CardIconMenu(iconMenuList: iconMenu2),
+            SizedBox(height: 8,),
+            CardIconMenu(iconMenuList: iconMenu3)
+          ]),
+        ));
   }
 }
